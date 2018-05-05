@@ -1,11 +1,11 @@
-package com.example.pc.apptranslate;
+package activities;
 
 import android.content.Intent;
-import android.os.Handler;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+
+import com.example.pc.apptranslate.R;
 
 public class HelloActivity extends AppCompatActivity {
     private Handler mWaitHandler = new Handler();
@@ -23,11 +23,9 @@ public class HelloActivity extends AppCompatActivity {
                 //The following code will execute after the 5 seconds.
 
                 try {
-
                     //Go to next page i.e, start the next activity.
                     Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                     startActivity(intent);
-
                     //Let's Finish Splash Activity since we don't want to show this when user press back button.
                     finish();
                 } catch (Exception ignored) {

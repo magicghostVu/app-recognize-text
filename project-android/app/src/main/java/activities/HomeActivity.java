@@ -1,4 +1,5 @@
-package com.example.pc.apptranslate;
+package activities;
+
 
 
 import android.content.Intent;
@@ -10,35 +11,41 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class SavedActivity extends AppCompatActivity {
-    private ImageButton button_home1;
-    private ImageButton button_setting1;
+import com.example.pc.apptranslate.R;
+
+
+public class HomeActivity extends AppCompatActivity {
     ActionBar actionBar;
+    private ImageButton button_setting;
+    private ImageButton button_saved;
+    private ImageButton camera;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_saved);
+        setContentView(R.layout.activity_home);
 
         actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#673fb4")));
 
-        button_home1 = (ImageButton) findViewById(R.id.button_home1);
-        button_home1.setOnClickListener(new View.OnClickListener() {
+        button_setting = (ImageButton) findViewById(R.id.button_setting);
+        button_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SavedActivity.this,HomeActivity.class);
+                Intent intent = new Intent(HomeActivity.this,SettingActivity.class);
                 startActivity(intent);
 
             }
         });
-        button_setting1 = (ImageButton) findViewById(R.id.button_setting1);
-        button_setting1.setOnClickListener(new View.OnClickListener() {
+
+        button_saved = (ImageButton) findViewById(R.id.button_saved);
+        button_saved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SavedActivity.this,SettingActivity.class);
+                Intent intent = new Intent(HomeActivity.this,SavedActivity.class);
                 startActivity(intent);
 
             }
         });
+
     }
 }

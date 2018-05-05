@@ -1,4 +1,4 @@
-package com.example.pc.apptranslate;
+package activities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,8 +8,9 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.example.pc.apptranslate.R;
 
 public class SettingActivity extends AppCompatActivity {
     ActionBar actionBar;
