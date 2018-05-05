@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Translate</string>
+    <string-array name="country_name">
+        <item>Tiếng Việt</item>
+        <item>Tiếng Anh</item>
+        <item>Tiếng Trung</item>
+        <item>Tiếng Nhật</item>
+        <item>Tiếng Pháp</item>
+    </string-array>
+    <string name="hintTrangchu">Trang chủ</string>
+    <string name="hintDaluu">Đã lưu</string>
+    <string name="hintCaidat">Cài đặt</string>
+    <string name="hintGioithieu">GIỚI THIỆU</string>
+    <string name="hintPhanhoi">PHẢN HỒI</string>
+    <string name="hintTrogiup">TRỢ GIÚP</string>
+    <string name="hintXoa">XÓA LỊCH SỬ DỊCH</string>
+    <string name="hintNhapvanban">Nhập văn bản</string>
+</resources>

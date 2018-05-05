@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="country_name">
+        <item>Vietnamese</item>
+        <item>English</item>
+        <item>Chinese</item>
+        <item>Japanese</item>
+        <item>French</item>
+    </string-array>
+    <string name="app_name">Translate</string>
+    <string name="hintTrangchu">Home</string>
+    <string name="hintDaluu">Saved</string>
+    <string name="hintCaidat">Settings</string>
+    <string name="hintGioithieu">About</string>
+    <string name="hintPhanhoi">Feedback</string>
+    <string name="hintTrogiup">Help</string>
+    <string name="hintXoa">CLEAR TRANSLATION HISTORY</string>
+    <string name="hintNhapvanban">Enter text</string>
+</resources>
