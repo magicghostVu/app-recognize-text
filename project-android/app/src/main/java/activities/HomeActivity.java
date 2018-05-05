@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.pc.apptranslate.R;
+import com.m.uet.apptranslate.R;
 
 
 public class HomeActivity extends AppCompatActivity {

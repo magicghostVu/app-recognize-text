@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.pc.apptranslate.R;
+import com.m.uet.apptranslate.R;
+
 
 public class HelloActivity extends AppCompatActivity {
     private Handler mWaitHandler = new Handler();

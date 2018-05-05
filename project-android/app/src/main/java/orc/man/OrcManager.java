@@ -8,7 +8,9 @@ public class OrcManager {
     private static OrcManager instanse = new OrcManager();
 
 
-    
+    private void init() {
+        
+    }
 
 
 }
