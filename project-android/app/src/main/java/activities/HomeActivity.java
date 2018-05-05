@@ -13,6 +13,8 @@ import android.widget.ImageButton;
 
 import com.m.uet.apptranslate.R;
 
+import orc.man.OrcManager;
+
 
 public class HomeActivity extends AppCompatActivity {
     ActionBar actionBar;
@@ -46,6 +48,9 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
+
+
+        OrcManager.getInstance().init();
 
     }
 }
