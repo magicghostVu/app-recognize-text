@@ -1,6 +1,5 @@
 package orc.man;
 
-import android.os.Environment;
 import android.util.Log;
 
 import com.googlecode.tesseract.android.TessBaseAPI;

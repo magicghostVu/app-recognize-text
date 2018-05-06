@@ -2,13 +2,11 @@ package activities;
 
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.Bitmap;
 import android.net.Uri;
-import android.provider.MediaStore;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -65,16 +63,16 @@ public class HomeActivity extends AppCompatActivity {
         button_image = (ImageButton) findViewById(R.id.button_image);
         iv = (ImageView) findViewById(R.id.imageView);
 
-
-
-
-
         Constants.intitConstant();
 
         OrcManager.getInstance().init();
 
+        //todo: add permission here
+
+
     }
-    public void imageClick(View view){
+
+    public void imageClick(View view) {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, SELECTED_PICTURE);
     }
@@ -98,7 +96,6 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
     }
-    
 
 
     @Override
@@ -127,6 +124,11 @@ public class HomeActivity extends AppCompatActivity {
                         Toast.makeText(this, "File not supported", Toast.LENGTH_SHORT).show();
                     } else {
                         //todo: load bit map ở đây
+
+
+
+                        Bitmap bitmap = null;
+
 
                         
 
