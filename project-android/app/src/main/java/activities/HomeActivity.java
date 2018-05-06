@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.m.uet.apptranslate.R;
@@ -23,13 +25,13 @@ import utils.FileUtils;
 
 
 public class HomeActivity extends AppCompatActivity {
-    ActionBar actionBar;
     private ImageButton button_setting;
     private ImageButton button_saved;
-    private ImageButton camera;
-
+    private ImageButton button_image;
+    ImageView iv;
 
     private final int requestCodeChooseFile = 1001;
+    private static final int SELECTED_PICTURE = 1;
 
 
     String tag = "Home_Tag";
@@ -39,8 +41,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#673fb4")));
 
         button_setting = (ImageButton) findViewById(R.id.button_setting);
         button_setting.setOnClickListener(new View.OnClickListener() {
@@ -62,16 +62,28 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        button_image = (ImageButton) findViewById(R.id.button_image);
+        iv = (ImageView) findViewById(R.id.imageView);
+
+
+
+
 
         Constants.intitConstant();
 
         OrcManager.getInstance().init();
 
     }
+    public void imageClick(View view){
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent, SELECTED_PICTURE);
+    }
 
 
     // gắn hàm này vào nút chọn file
     private void showChooseFile() {
+
+
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("*/*");
         intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -86,6 +98,7 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
     }
+    
 
 
     @Override
@@ -111,7 +124,7 @@ public class HomeActivity extends AppCompatActivity {
                     String extFile = FileUtils.getExtensionFile(file);
 
                     if (!Constants.getExtAllow().contains(extFile)) {
-                        Toast.makeText(this, "File not supported", Toast.LENGTH_SHORT);
+                        Toast.makeText(this, "File not supported", Toast.LENGTH_SHORT).show();
                     } else {
                         //todo: load bit map ở đây
 

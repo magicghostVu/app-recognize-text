@@ -4,68 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg3"
+    android:background="@drawable/backgroud1"
     tools:context="activities.SavedActivity">
 
     <ImageButton
-        android:id="@+id/button_home1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="30dp"
-        android:layout_y="550dp"
-        android:background="@null"
-        app:srcCompat="@drawable/home"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="550dp" />
-
-    <ImageButton
-        android:id="@+id/button_saved1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="197.5dp"
-        android:layout_y="550dp"
-        android:background="@null"
-        app:srcCompat="@drawable/star1"
-        tools:layout_editor_absoluteX="193dp"
-        tools:layout_editor_absoluteY="549dp" />
-
-    <ImageButton
         android:id="@+id/button_setting1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="360dp"
-        android:layout_y="550dp"
+        android:layout_width="65dp"
+        android:layout_height="55dp"
+        android:layout_x="345dp"
+        android:layout_y="599dp"
         android:background="@null"
-        app:srcCompat="@drawable/settings"
-        tools:layout_editor_absoluteX="324dp"
-        tools:layout_editor_absoluteY="549dp" />
+        app:srcCompat="@drawable/settings" />
+
+    <ImageButton
+        android:id="@+id/button_saved"
+        android:layout_width="65dp"
+        android:layout_height="55dp"
+        android:layout_x="182dp"
+        android:layout_y="599dp"
+        android:background="@null"
+        app:srcCompat="@drawable/star1" />
+
+    <ImageButton
+        android:id="@+id/button_home1"
+        android:layout_width="65dp"
+        android:layout_height="55dp"
+        android:layout_x="10dp"
+        android:layout_y="599dp"
+        android:background="@null"
+        app:srcCompat="@drawable/home" />
 
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="22dp"
-        android:layout_y="575dp"
+        android:layout_x="11dp"
+        android:layout_y="633dp"
         android:hint="@string/hintTrangchu"
-        android:textColorHint="@android:color/white" />
+        android:textColorHint="#757575"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="575dp" />
 
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="190dp"
-        android:layout_y="575dp"
+        android:layout_x="197dp"
+        android:layout_y="634dp"
         android:hint="@string/hintDaluu"
-        android:textColorHint="#00e4ff" />
+        android:textColorHint="#2196F3" />
 
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="350dp"
-        android:layout_y="575dp"
+        android:layout_x="356dp"
+        android:layout_y="635dp"
         android:hint="@string/hintCaidat"
-        android:textColorHint="@android:color/white" />
+        android:textColorHint="#757575" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="13dp"
+        android:layout_y="15dp"
+        android:hint="@string/hintDaluu"
+        android:textSize="23dp"
+        android:textColorHint="#000000"
+        android:textStyle="normal"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="24dp" />
 
 
 </AbsoluteLayout>

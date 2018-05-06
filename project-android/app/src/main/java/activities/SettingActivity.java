@@ -14,7 +14,7 @@ import com.m.uet.apptranslate.R;
 
 
 public class SettingActivity extends AppCompatActivity {
-    ActionBar actionBar;
+
     private ImageButton button_home2;
     private ImageButton button_saved2;
     @Override
@@ -22,8 +22,7 @@ public class SettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#673fb4")));
+
 
         button_home2 = (ImageButton) findViewById(R.id.button_home2);
         button_home2.setOnClickListener(new View.OnClickListener() {
