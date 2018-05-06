@@ -40,7 +40,6 @@ public class HomeActivity extends AppCompatActivity {
     private final int requestCodeChooseFile = 6384;
 
 
-
     String tag = "Home_Tag";
 
 
@@ -62,7 +61,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        button_saved =  findViewById(R.id.button_saved);
+        button_saved = findViewById(R.id.button_saved);
         button_saved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -170,9 +169,8 @@ public class HomeActivity extends AppCompatActivity {
                     String extFile = FileUtils.getExtensionFile(file);
 
 
-                    Log.d(tag, "file exist "+ file.exists());
-                    Log.d(tag, "name file is " + file.getName()+  " ext file is "+ extFile);
-
+                    Log.d(tag, "file exist " + file.exists());
+                    Log.d(tag, "name file is " + file.getName() + " ext file is " + extFile);
 
 
                     if (!Constants.getExtAllow().contains(extFile)) {
@@ -185,13 +183,19 @@ public class HomeActivity extends AppCompatActivity {
                         options.inPreferredConfig = Bitmap.Config.ARGB_8888;
                         Bitmap bitmap = BitmapFactory.decodeFile(path, options);
                         Drawable d = new BitmapDrawable(bitmap);
-                        Log.d("selectFile", "file path is "+ path );
-                        Log.d("selectFile", "file if null"+ (d == null));
-
+                        Log.d("selectFile", "file path is " + path);
+                        Log.d("selectFile", "file if null" + (d == null));
 
 
                         //todo: hiện bit mp lên
                         iv.setImageBitmap(bitmap);
+
+
+                        String text = OrcManager.getInstance().getDataFromBitMap(bitmap);
+
+                        Log.d(tag, "text is " + text);
+
+                        //todo: set text to Text View
 
                     }
 

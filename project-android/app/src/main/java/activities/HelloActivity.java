@@ -54,6 +54,10 @@ public class HelloActivity extends AppCompatActivity {
             Log.d(tag, "all data is done");
 
             Toast.makeText(this, "allData copied", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            startActivity(intent);
+            //Let's Finish Splash Activity since we don't want to show this when user press back button.
+            finish();
 
         } else {
             // thông báo hãy đợi cho đến khi hoàn tất copy data
@@ -65,7 +69,11 @@ public class HelloActivity extends AppCompatActivity {
                 Log.d(tag, "try to copy data");
 
                 Utils.copyDataFromAssetToAppData();
-
+                //Go to next page i.e, start the next activity.
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
+                //Let's Finish Splash Activity since we don't want to show this when user press back button.
+                finish();
 
             } catch (Exception e) {
                 Log.d(tag, e.getMessage());

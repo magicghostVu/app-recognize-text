@@ -1,5 +1,6 @@
 package orc.man;
 
+import android.graphics.Bitmap;
 import android.util.Log;
 
 import com.googlecode.tesseract.android.TessBaseAPI;
@@ -32,5 +33,10 @@ public class OrcManager {
 
     public static OrcManager getInstance() {
         return instance;
+    }
+
+    public String getDataFromBitMap(Bitmap bitmap){
+        api.setImage(bitmap);
+        return api.getUTF8Text();
     }
 }
