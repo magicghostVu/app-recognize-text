@@ -10,6 +10,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
@@ -26,6 +27,7 @@ import com.m.uet.apptranslate.R;
 import java.io.File;
 
 import constants.Constants;
+import mytask.GetTextFromBitMap;
 import orc.man.OrcManager;
 import utils.FileUtils;
 import utils.Utils;
@@ -52,23 +54,16 @@ public class HomeActivity extends AppCompatActivity {
 
 
         button_setting = findViewById(R.id.button_setting);
-        button_setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, SettingActivity.class);
-                startActivity(intent);
-
-            }
+        button_setting.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, SettingActivity.class);
+            startActivity(intent);
         });
 
         button_saved = findViewById(R.id.button_saved);
-        button_saved.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, SavedActivity.class);
-                startActivity(intent);
+        button_saved.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, SavedActivity.class);
+            startActivity(intent);
 
-            }
         });
 
         button_image = findViewById(R.id.button_image);
@@ -107,7 +102,7 @@ public class HomeActivity extends AppCompatActivity {
 
         try {
             startActivityForResult(
-                    Intent.createChooser(intent, "Select a File to Upload"),
+                    Intent.createChooser(intent, "Select a Image file"),
                     requestCodeChooseFile);
         } catch (android.content.ActivityNotFoundException ex) {
             // Potentially direct the user to the Market with a Dialog
@@ -127,7 +122,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 // nếu cho phép
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, "read permission granted", Toast.LENGTH_SHORT);
+                    Toast.makeText(this, "read permission granted", Toast.LENGTH_SHORT).show();
                 }
                 // không cho phép
                 else {
@@ -136,6 +131,7 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.makeText(this, "App can not read data from storage, so exit now", Toast.LENGTH_SHORT).show();
 
                     // todo: exit here
+                    System.exit(0);
 
                 }
 
@@ -182,18 +178,24 @@ public class HomeActivity extends AppCompatActivity {
                         BitmapFactory.Options options = new BitmapFactory.Options();
                         options.inPreferredConfig = Bitmap.Config.ARGB_8888;
                         Bitmap bitmap = BitmapFactory.decodeFile(path, options);
-                        Drawable d = new BitmapDrawable(bitmap);
+                        /*Drawable d = new BitmapDrawable(bitmap);
                         Log.d("selectFile", "file path is " + path);
-                        Log.d("selectFile", "file if null" + (d == null));
+                        Log.d("selectFile", "file if null" + (d == null));*/
 
 
                         //todo: hiện bit mp lên
                         iv.setImageBitmap(bitmap);
 
 
-                        String text = OrcManager.getInstance().getDataFromBitMap(bitmap);
+                        //String text = OrcManager.getInstance().getDataFromBitMap(bitmap);
 
-                        Log.d(tag, "text is " + text);
+                        // todo: thực hiện async task ở đây đê lấy ra text
+
+                        AsyncTask<Bitmap, Void, String> myTask = new GetTextFromBitMap(this);
+
+                        myTask.execute(bitmap);
+
+                        //Log.d(tag, "text is " + text);
 
                         //todo: set text to Text View
 

@@ -39,6 +39,8 @@ public class Utils {
         if (!folderAppData.exists()) return false;
 
         File[] allFileTrainedData = folderTessData.listFiles();
+        if(allFileTrainedData==null) return false;
+
         Log.d(tag, "all file is " + Arrays.toString(allFileTrainedData));
         return allFileTrainedData.length > 0;
 
