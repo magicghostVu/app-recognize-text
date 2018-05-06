@@ -35,7 +35,7 @@ public class FileUtils {
 
     // lấy đuôi file
     public static String getExtensionFile(File f) {
-        if (f.exists()) return null;
+        if (!f.exists()) return null;
 
         String name = f.getName();
 

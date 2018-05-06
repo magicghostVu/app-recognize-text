@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
     private ImageButton button_image;
     ImageView iv;
 
-    private final int requestCodeChooseFile = 1001;
+    private final int requestCodeChooseFile = 6384;
 
 
 
@@ -52,7 +52,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-        button_setting = (ImageButton) findViewById(R.id.button_setting);
+        button_setting = findViewById(R.id.button_setting);
         button_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +62,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        button_saved = (ImageButton) findViewById(R.id.button_saved);
+        button_saved =  findViewById(R.id.button_saved);
         button_saved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,8 +72,8 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        button_image = (ImageButton) findViewById(R.id.button_image);
-        iv = (ImageView) findViewById(R.id.imageView);
+        button_image = findViewById(R.id.button_image);
+        iv = findViewById(R.id.imageView);
 
         Constants.intitConstant();
 
@@ -168,6 +168,12 @@ public class HomeActivity extends AppCompatActivity {
                     //String fileName= file.getName();
 
                     String extFile = FileUtils.getExtensionFile(file);
+
+
+                    Log.d(tag, "file exist "+ file.exists());
+                    Log.d(tag, "name file is " + file.getName()+  " ext file is "+ extFile);
+
+
 
                     if (!Constants.getExtAllow().contains(extFile)) {
                         Toast.makeText(this, "File not supported", Toast.LENGTH_SHORT).show();
