@@ -1,11 +1,17 @@
 package activities;
 
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +26,7 @@ import java.io.File;
 import constants.Constants;
 import orc.man.OrcManager;
 import utils.FileUtils;
+import utils.Utils;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -33,6 +40,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
     String tag = "Home_Tag";
+
+
+    private final int requestCodeReadPermission = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +79,13 @@ public class HomeActivity extends AppCompatActivity {
 
         //todo: add permission here
 
+        boolean canReadDataFromSdCard = Utils.checkPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
+
+        if (!canReadDataFromSdCard) {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},
+                    requestCodeReadPermission);
+        }
+
 
     }
 
@@ -99,6 +116,35 @@ public class HomeActivity extends AppCompatActivity {
 
 
     @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+
+        switch (requestCode) {
+            case requestCodeReadPermission: {
+
+                // nếu cho phép
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(this, "read permission granted", Toast.LENGTH_SHORT);
+                }
+                // không cho phép
+                else {
+                    //
+
+                    Toast.makeText(this, "App can not read data from storage, so exit now", Toast.LENGTH_SHORT).show();
+
+                    // todo: exit here
+
+                }
+
+
+                break;
+            }
+        }
+
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -126,11 +172,14 @@ public class HomeActivity extends AppCompatActivity {
                         //todo: load bit map ở đây
 
 
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+                        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
 
-                        Bitmap bitmap = null;
 
+                        Bitmap bitmap = BitmapFactory.decodeFile(path, options);
 
-                        
+                        //todo: hiện bit mp lên
+
 
                     }
 
