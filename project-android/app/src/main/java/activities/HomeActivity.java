@@ -3,6 +3,8 @@ package activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -128,7 +130,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
                         Bitmap bitmap = null;
-
+                        Drawable d = new BitmapDrawable(bitmap);
+                        Log.d("selectFile", "file path is " );
+                        Log.d("selectFile", "file if null"+ (d == null));
 
                         
 
