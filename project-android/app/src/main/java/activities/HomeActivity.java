@@ -38,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
     ImageView iv;
 
     private final int requestCodeChooseFile = 1001;
-    private static final int SELECTED_PICTURE = 1;
+
 
 
     String tag = "Home_Tag";
@@ -92,8 +92,9 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void imageClick(View view) {
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent, SELECTED_PICTURE);
+        /*Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent, SELECTED_PICTURE);*/
+        showChooseFile();
     }
 
 
@@ -176,15 +177,15 @@ public class HomeActivity extends AppCompatActivity {
 
                         BitmapFactory.Options options = new BitmapFactory.Options();
                         options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-
+                        Bitmap bitmap = BitmapFactory.decodeFile(path, options);
                         Drawable d = new BitmapDrawable(bitmap);
-                        Log.d("selectFile", "file path is " );
+                        Log.d("selectFile", "file path is "+ path );
                         Log.d("selectFile", "file if null"+ (d == null));
 
-                        Bitmap bitmap = BitmapFactory.decodeFile(path, options);
+
 
                         //todo: hiện bit mp lên
-
+                        iv.setImageBitmap(bitmap);
 
                     }
 
