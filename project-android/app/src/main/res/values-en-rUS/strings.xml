@@ -16,4 +16,5 @@
     <string name="hintTrogiup">Help</string>
     <string name="hintXoa">CLEAR TRANSLATION HISTORY</string>
     <string name="hintNhapvanban">Enter text</string>
+    <string name="hintVanban">Text</string>
 </resources>
