@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
-
 import orc.man.OrcManager;
 
 /**
@@ -16,6 +15,8 @@ public class GetTextFromBitMap extends AsyncTask<Bitmap, Void, String> {
 
 
     private String tag = "myTask";
+
+
 
     public GetTextFromBitMap(Activity parentContext) {
         this.parentContext = parentContext;
@@ -39,6 +40,7 @@ public class GetTextFromBitMap extends AsyncTask<Bitmap, Void, String> {
         Log.d(tag, "Image is processing");
 
         Toast.makeText(parentContext, "Img is being processed", Toast.LENGTH_SHORT).show();
+
 
         // todo: làm cho nút chọn ảnh không bấm được nữa
 

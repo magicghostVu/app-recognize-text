@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.m.uet.apptranslate.R;
@@ -33,16 +34,18 @@ import utils.FileUtils;
 import utils.Utils;
 
 
+
 public class HomeActivity extends AppCompatActivity {
     private ImageButton button_setting;
     private ImageButton button_saved;
     private ImageButton button_image;
     ImageView iv;
+    TextView text_View;
 
     private final int requestCodeChooseFile = 6384;
 
 
-    String tag = "Home_Tag";
+    String tag ;
 
 
     private final int requestCodeReadPermission = 2;
@@ -52,6 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        text_View = findViewById(R.id.text_View);
 
         button_setting = findViewById(R.id.button_setting);
         button_setting.setOnClickListener(v -> {
@@ -83,6 +87,62 @@ public class HomeActivity extends AppCompatActivity {
         }
 
 
+    }
+    public class GetTextFromBitMap extends AsyncTask<Bitmap, Void, String> {
+
+
+        private String tag = "myTask";
+
+
+
+        public GetTextFromBitMap(Activity parentContext) {
+            this.parentContext = parentContext;
+            //this.data = dataWillProcess;
+        }
+
+        private Activity parentContext;
+
+        //private Bitmap data;
+
+        public Activity getParentContext() {
+            return parentContext;
+        }
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+
+            Log.d(tag, "Image is processing");
+
+            Toast.makeText(parentContext, "Img is being processed", Toast.LENGTH_SHORT).show();
+
+
+            // todo: làm cho nút chọn ảnh không bấm được nữa
+
+
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+
+            Log.d(tag, "img had been processed");
+
+            Toast.makeText(parentContext, "Img had been processed", Toast.LENGTH_SHORT).show();
+            text_View.setText(s);
+
+
+            //t
+        }
+
+        @Override
+        protected String doInBackground(Bitmap[] bitmaps) {
+            Bitmap data = bitmaps[0];
+            return OrcManager.getInstance().getDataFromBitMap(data);
+            //return null;
+        }
     }
 
     public void imageClick(View view) {
@@ -174,7 +234,6 @@ public class HomeActivity extends AppCompatActivity {
                     } else {
                         //todo: load bit map ở đây
 
-
                         BitmapFactory.Options options = new BitmapFactory.Options();
                         options.inPreferredConfig = Bitmap.Config.ARGB_8888;
                         Bitmap bitmap = BitmapFactory.decodeFile(path, options);
@@ -182,11 +241,8 @@ public class HomeActivity extends AppCompatActivity {
                         Log.d("selectFile", "file path is " + path);
                         Log.d("selectFile", "file if null" + (d == null));*/
 
-
                         //todo: hiện bit mp lên
                         iv.setImageBitmap(bitmap);
-
-
                         //String text = OrcManager.getInstance().getDataFromBitMap(bitmap);
 
                         // todo: thực hiện async task ở đây đê lấy ra text
@@ -198,6 +254,9 @@ public class HomeActivity extends AppCompatActivity {
                         //Log.d(tag, "text is " + text);
 
                         //todo: set text to Text View
+
+
+
 
                     }
 
