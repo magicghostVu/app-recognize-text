@@ -2,17 +2,13 @@ package activities;
 
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -88,7 +84,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
     }
-    public class GetTextFromBitMap extends AsyncTask<Bitmap, Void, String> {
+    /*public class GetTextFromBitMap extends AsyncTask<Bitmap, Void, String> {
 
 
         private String tag = "myTask";
@@ -143,7 +139,7 @@ public class HomeActivity extends AppCompatActivity {
             return OrcManager.getInstance().getDataFromBitMap(data);
             //return null;
         }
-    }
+    }*/
 
     public void imageClick(View view) {
         /*Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);

@@ -4,8 +4,12 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
+
 import orc.man.OrcManager;
+
+import com.m.uet.apptranslate.R;
 
 /**
  * Created by magic on 06/05/2018.
@@ -15,7 +19,6 @@ public class GetTextFromBitMap extends AsyncTask<Bitmap, Void, String> {
 
 
     private String tag = "myTask";
-
 
 
     public GetTextFromBitMap(Activity parentContext) {
@@ -55,6 +58,10 @@ public class GetTextFromBitMap extends AsyncTask<Bitmap, Void, String> {
 
         Toast.makeText(parentContext, "Img had been processed", Toast.LENGTH_SHORT).show();
 
+
+        TextView textView = getParentContext().findViewById(R.id.text_View);
+
+        textView.setText(s);
 
         //t
     }
