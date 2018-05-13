@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -16,16 +15,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.m.uet.apptranslate.R;
 
 import java.io.File;
-import java.util.ArrayList;
 
 import constants.Constants;
 import language_support.LanguageSupported;
@@ -40,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
     private ImageButton button_translate;
     private ImageButton button_image;
     ImageView iv;
-    TextView text_View;
+    EditText editText;
 
     Spinner spinner;
 
@@ -50,7 +48,7 @@ public class HomeActivity extends AppCompatActivity {
     private final int requestCodeChooseFile = 6384;
 
 
-    String tag;
+    String tag = "home_act";
 
 
     private Bitmap currentBitMap;
@@ -79,7 +77,7 @@ public class HomeActivity extends AppCompatActivity {
         currentLanguageSupported = LanguageSupported.vie;
         setContentView(R.layout.activity_home);
 
-        text_View = findViewById(R.id.text_View);
+        editText = findViewById(R.id.edit_text);
 
         button_setting = findViewById(R.id.button_setting);
         button_setting.setOnClickListener(v -> {
@@ -94,8 +92,7 @@ public class HomeActivity extends AppCompatActivity {
 
             // todo: check điều kiện để bấm nút này
 
-
-            String currentText = text_View.getText().toString();
+            String currentText = editText.getText().toString();
             if (currentText == null || currentText.equals("")) {
                 Toast.makeText(this, "You have no text to translate", Toast.LENGTH_SHORT).show();
             } else {
@@ -123,14 +120,28 @@ public class HomeActivity extends AppCompatActivity {
         //todo: spinner
 
         spinner = findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this,R.array.country_name,android.R.layout.simple_spinner_item);
+
+
+        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(this, R.array.country_name, android.R.layout.simple_spinner_item);
+
+
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
         spinner.setAdapter(arrayAdapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String text = parent.getItemAtPosition(position).toString();
-                Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
+                Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+
+                LanguageSupported languageSupportedSelect = LanguageSupported.fromPosition(position);
+
+
+                currentLanguageSupported = languageSupportedSelect;
+
+                Log.d(tag, "user select " + languageSupportedSelect.name());
+
             }
 
             @Override

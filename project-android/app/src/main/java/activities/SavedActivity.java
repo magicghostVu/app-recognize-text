@@ -7,15 +7,21 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
 import com.m.uet.apptranslate.R;
 
+import constants.Constants;
+import language_support.LanguageSupported;
+
 
 public class SavedActivity extends AppCompatActivity {
     private ImageButton button_home1;
     private ImageButton button_setting1;
+
+    String tag = "trans_act";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +29,11 @@ public class SavedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_saved);
 
 
-
         button_home1 = (ImageButton) findViewById(R.id.button_home1);
         button_home1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SavedActivity.this,HomeActivity.class);
+                Intent intent = new Intent(SavedActivity.this, HomeActivity.class);
                 startActivity(intent);
 
             }
@@ -37,10 +42,21 @@ public class SavedActivity extends AppCompatActivity {
         button_setting1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SavedActivity.this,SettingActivity.class);
+                Intent intent = new Intent(SavedActivity.this, SettingActivity.class);
                 startActivity(intent);
 
             }
         });
+
+
+        Intent beforeIntent = this.getIntent();
+
+        String textNeedTrans = beforeIntent.getStringExtra(Constants.getKeyExtrasText());
+
+        LanguageSupported languageSupported = LanguageSupported.valueOf(beforeIntent.getStringExtra(Constants.getKeyLanExtras()));
+
+        Log.d(tag, "text is " + textNeedTrans + " " + "lan is " + languageSupported);
+
+
     }
 }

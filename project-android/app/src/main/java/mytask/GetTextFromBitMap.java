@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,9 +63,9 @@ public class GetTextFromBitMap extends AsyncTask<Bitmap, Void, String> {
         Toast.makeText(parentContext, "Img had been processed", Toast.LENGTH_SHORT).show();
 
 
-        TextView textView = getParentContext().findViewById(R.id.text_View);
+        EditText editText = getParentContext().findViewById(R.id.edit_text);
 
-        textView.setText(s);
+        editText.setText(s);
 
         // todo: bật nút chọn ảnh trở lại
 
