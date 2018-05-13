@@ -1,12 +1,9 @@
 package activities;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -24,7 +21,7 @@ public class SettingActivity extends AppCompatActivity {
 
 
 
-        button_home2 = (ImageButton) findViewById(R.id.button_home2);
+        button_home2 = findViewById(R.id.button_home2);
         button_home2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,7 +30,7 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
-        button_translate2 = (ImageButton) findViewById(R.id.button_translate2);
+        button_translate2 = findViewById(R.id.button_translate2);
         button_translate2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

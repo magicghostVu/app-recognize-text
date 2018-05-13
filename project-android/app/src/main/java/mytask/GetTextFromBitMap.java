@@ -48,6 +48,8 @@ public class GetTextFromBitMap extends AsyncTask<Bitmap, Void, String> {
         // todo: làm cho nút chọn ảnh không bấm được nữa
 
 
+
+
     }
 
     @Override
@@ -63,7 +65,8 @@ public class GetTextFromBitMap extends AsyncTask<Bitmap, Void, String> {
 
         textView.setText(s);
 
-        //t
+        // todo: bật nút chọn ảnh trở lại
+
     }
 
     @Override
