@@ -67,7 +67,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         button_image = findViewById(R.id.button_image);
-        iv = findViewById(R.id.imageView);
+        iv = findViewById(R.id.image_View);
 
         Constants.intitConstant();
 

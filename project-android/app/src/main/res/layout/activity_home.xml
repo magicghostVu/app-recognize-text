@@ -1,165 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroud"
-    tools:context="activities.HomeActivity">
+    tools:context="activities.HomeActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#2196F3"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:text="Translate"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="326dp"
+            android:layout_marginTop="46dp">
+
+            <ImageView
+                android:id="@+id/image_View"
+                android:layout_width="match_parent"
+                android:layout_height="270dp" />
+
+            <ImageButton
+                android:id="@+id/button_image"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="280dp"
+                android:background="@null"
+                android:src="@drawable/image" />
+
+            <ImageButton
+                android:id="@+id/button_export"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="280dp"
+                android:background="@null"
+                android:src="@drawable/export" />
+
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="325dp"
+                android:layout_marginTop="280dp"
+                android:background="@null"
+                android:src="@drawable/translate" />
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="375dp"
+            android:background="#f2f2f2">
+
+            <TextView
+                android:id="@+id/text_View"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="677dp"
+            android:background="#ffffff"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/button_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/home1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintTrangchu"
+                    android:textColorHint="#2196F3"/>
 
 
-    <ImageButton
-        android:id="@+id/button_setting"
-        android:layout_width="65dp"
-        android:layout_height="55dp"
-        android:layout_x="345dp"
-        android:layout_y="599dp"
-        android:background="@null"
-        app:srcCompat="@drawable/settings" />
+            </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/button_saved"
-        android:layout_width="65dp"
-        android:layout_height="55dp"
-        android:layout_x="182dp"
-        android:layout_y="599dp"
-        android:background="@null"
-        app:srcCompat="@drawable/star" />
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="92dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/button_home"
-        android:layout_width="65dp"
-        android:layout_height="55dp"
-        android:layout_x="10dp"
-        android:layout_y="599dp"
-        android:background="@null"
-        app:srcCompat="@drawable/home1" />
+                <ImageButton
+                    android:id="@+id/button_translate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/translate2" />
 
-    <ImageButton
-        android:id="@+id/camera"
-        android:layout_width="59dp"
-        android:layout_height="47dp"
-        android:layout_x="1dp"
-        android:layout_y="312dp"
-        android:background="@null"
-        android:src="@drawable/camera"
-        />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintDich" />
+            </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/button_image"
-        android:layout_width="59dp"
-        android:layout_height="47dp"
-        android:layout_x="100dp"
-        android:layout_y="312dp"
-        android:background="@null"
-        android:onClick="imageClick"
-        android:src="@drawable/image" />
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/voice"
-        android:layout_width="59dp"
-        android:layout_height="47dp"
-        android:layout_x="255dp"
-        android:layout_y="312dp"
-        android:background="@null"
-        android:elevation="0dp"
-        android:src="@drawable/voice" />
+                <ImageButton
+                    android:id="@+id/button_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/settings" />
 
-    <ImageButton
-        android:id="@+id/pen"
-        android:layout_width="59dp"
-        android:layout_height="47dp"
-        android:layout_x="351dp"
-        android:layout_y="312dp"
-        android:background="@null"
-        android:src="@drawable/pen" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintCaidat" />
+            </LinearLayout>
+
+        </LinearLayout>
 
 
-    <ImageButton
-        android:id="@+id/arrow"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
-        android:layout_x="178dp"
-        android:layout_y="58dp"
-        android:background="@null"
-        app:srcCompat="@drawable/arrow" />
+    </RelativeLayout>
 
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="15dp"
-        android:layout_y="633dp"
-        android:hint="@string/hintTrangchu"
-        android:textColorHint="#2196F3"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="575dp" />
-
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="197dp"
-        android:layout_y="634dp"
-        android:hint="@string/hintDaluu"
-        android:textColorHint="#757575" />
-
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="356dp"
-        android:layout_y="635dp"
-        android:hint="@string/hintCaidat"
-        android:textColorHint="#757575" />
-
-
-    <Spinner
-        android:id="@+id/spin"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_x="20dp"
-        android:layout_y="55dp"
-        android:entries="@array/country_name" />
-
-    <Spinner
-        android:id="@+id/spin1"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_x="245dp"
-        android:layout_y="55dp"
-        android:entries="@array/country_name" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="289dp"
-        android:layout_height="193dp"
-        android:layout_x="62dp"
-        android:layout_y="110dp"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="175dp" />
-
-    <TextView
-        android:id="@+id/text_View"
-        android:layout_width="346dp"
-        android:layout_height="177dp"
-        android:layout_x="32dp"
-        android:layout_y="390dp"
-        android:textSize="17sp"
-        android:textColorHint="@android:color/black"
-        tools:layout_editor_absoluteX="185dp"
-        tools:layout_editor_absoluteY="468dp" />
-
-    // ImageButton
-        android:id="@+id/button_export"
-        android:layout_width="59dp"
-        android:layout_height="47dp"
-        android:layout_x="175dp"
-        android:layout_y="312dp"
-        android:background="@null"
-        android:src="@drawable/export"
-        android:onClick="exportClick"
-
-
-</AbsoluteLayout>
-
+</LinearLayout>

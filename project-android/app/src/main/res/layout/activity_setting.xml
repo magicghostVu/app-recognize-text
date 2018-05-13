@@ -1,122 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroud1"
-    tools:context="activities.SettingActivity">
+    tools:context="activities.SavedActivity"
+    android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/button_setting"
-        android:layout_width="65dp"
-        android:layout_height="55dp"
-        android:layout_x="345dp"
-        android:layout_y="599dp"
-        android:background="@null"
-        app:srcCompat="@drawable/settings1" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageButton
-        android:id="@+id/button_saved2"
-        android:layout_width="65dp"
-        android:layout_height="55dp"
-        android:layout_x="182dp"
-        android:layout_y="599dp"
-        android:background="@null"
-        app:srcCompat="@drawable/star" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#fff"
+            android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/button_home2"
-        android:layout_width="65dp"
-        android:layout_height="55dp"
-        android:layout_x="10dp"
-        android:layout_y="599dp"
-        android:background="@null"
-        app:srcCompat="@drawable/home" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/hintCaidat"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <TextView
+        </LinearLayout>
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="11dp"
-        android:layout_y="633dp"
-        android:hint="@string/hintTrangchu"
-        android:textColorHint="#757575"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="575dp" />
 
-    <TextView
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="197dp"
-        android:layout_y="634dp"
-        android:hint="@string/hintDaluu"
-        android:textColorHint="#757575" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="677dp"
+            android:background="#ffffff"
+            android:orientation="horizontal">
 
-    <TextView
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="356dp"
-        android:layout_y="635dp"
-        android:hint="@string/hintCaidat"
-        android:textColorHint="#2196F3" />
+                <ImageButton
+                    android:id="@+id/button_home1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/home1" />
 
-    <Button
-        android:id="@+id/button_intro"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_x="89dp"
-        android:layout_y="85dp"
-        android:textSize="17sp"
-        android:background="#ffffff"
-        android:hint="@string/hintGioithieu"
-        android:textColorHint="@android:color/black" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintTrangchu"
+                    android:textColorHint="#2196F3"/>
 
-    <Button
-        android:id="@+id/button_report"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_x="89dp"
-        android:layout_y="195dp"
-        android:background="#ffffff"
-        android:textSize="17sp"
-        android:hint="@string/hintPhanhoi"
-        android:textColorHint="@android:color/black" />
 
-    <Button
-        android:id="@+id/button_help"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_x="89dp"
-        android:layout_y="140dp"
-        android:background="#ffffff"
-        android:hint="@string/hintTrogiup"
-        android:textSize="17sp"
-        android:textColorHint="@android:color/black" />
+            </LinearLayout>
 
-    <Button
-        android:id="@+id/button_delete"
-        android:layout_width="272dp"
-        android:layout_height="wrap_content"
-        android:layout_x="64dp"
-        android:layout_y="326dp"
-        android:background="#2196f3"
-        android:hint="@string/hintXoa"
-        android:textColorHint="@android:color/white"
-        android:textSize="15sp" />
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="13dp"
-        android:layout_y="15dp"
-        android:hint="@string/hintCaidat"
-        android:textSize="23dp"
-        android:textColorHint="#000000"
-        android:textStyle="normal"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="24dp" />
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="92dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-</AbsoluteLayout>
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/translate2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintDich" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/settings" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintCaidat" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
