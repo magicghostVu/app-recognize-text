@@ -17,6 +17,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import application.MyApp;
+import language_support.LanguageSupported;
 
 /**
  * Created by magic on 06/05/2018.
@@ -42,7 +43,10 @@ public class Utils {
         if(allFileTrainedData==null) return false;
 
         Log.d(tag, "all file is " + Arrays.toString(allFileTrainedData));
-        return allFileTrainedData.length > 0;
+
+
+
+        return allFileTrainedData.length == LanguageSupported.values().length;
 
     }
 

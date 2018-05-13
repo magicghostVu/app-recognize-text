@@ -48,6 +48,8 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
@@ -69,7 +71,7 @@ public class HomeActivity extends AppCompatActivity {
         button_image = findViewById(R.id.button_image);
         iv = findViewById(R.id.image_View);
 
-        Constants.intitConstant();
+        Constants.initConstant();
 
         OrcManager.getInstance().init();
 
