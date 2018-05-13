@@ -13,9 +13,13 @@ public class Constants {
 
     private static Set<String> extAllow;
 
-    private static String apiKey = "AIzaSyAgr35d8MYVcrvQPgwIP14Tzflf3HvdEe0";
+    private static String apiKey = "AIzaSyCyW3ZrelqLmFzcG3wf7MDlzXXAFmKMNl8";
 
-    private static String urlTransApi= "https://translation.googleapis.com/language/translate/v2";
+    private static String urlTransApi = "https://translation.googleapis.com/language/translate/v2";
+
+    private static final String keyExtrasText = "keyExtrasText";
+
+    private static final String keyLanExtras = "keyLanExtras";
 
 
     public static void initConstant() {
@@ -34,5 +38,13 @@ public class Constants {
 
     public static String getUrlTransApi() {
         return urlTransApi;
+    }
+
+    public static String getKeyExtrasText() {
+        return keyExtrasText;
+    }
+
+    public static String getKeyLanExtras() {
+        return keyLanExtras;
     }
 }
