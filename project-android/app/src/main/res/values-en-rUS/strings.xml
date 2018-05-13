@@ -5,7 +5,6 @@
         <item>English</item>
         <item>Chinese</item>
         <item>Japanese</item>
-        <item>French</item>
     </string-array>
     <string name="app_name">Translate</string>
     <string name="hintTrangchu">Home</string>
