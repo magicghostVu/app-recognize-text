@@ -33,7 +33,7 @@ import utils.Utils;
 
 public class HomeActivity extends AppCompatActivity {
     private ImageButton button_setting;
-    private ImageButton button_saved;
+    private ImageButton button_translate;
     private ImageButton button_image;
     ImageView iv;
     TextView text_View;
@@ -59,8 +59,8 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        button_saved = findViewById(R.id.button_saved);
-        button_saved.setOnClickListener(v -> {
+        button_translate = findViewById(R.id.button_translate);
+        button_translate.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this, SavedActivity.class);
             startActivity(intent);
 

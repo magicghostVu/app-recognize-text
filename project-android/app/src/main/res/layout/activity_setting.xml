@@ -28,11 +28,11 @@
         </LinearLayout>
 
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_marginTop="677dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
             android:background="#ffffff"
             android:orientation="horizontal">
 
@@ -45,17 +45,17 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/button_home1"
+                    android:id="@+id/button_home2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:src="@drawable/home1" />
+                    android:src="@drawable/home" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/hintTrangchu"
-                    android:textColorHint="#2196F3"/>
+                    android:textColorHint="#757575" />
 
 
             </LinearLayout>
@@ -69,6 +69,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
+                    android:id="@+id/button_setting2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
@@ -92,12 +93,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:src="@drawable/settings" />
+                    android:src="@drawable/settings1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hintCaidat" />
+                    android:hint="@string/hintCaidat"
+                    android:textColorHint="#2196f3" />
             </LinearLayout>
 
         </LinearLayout>

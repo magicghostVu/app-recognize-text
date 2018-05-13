@@ -34,7 +34,7 @@
             android:layout_marginTop="46dp">
 
             <TextView
-                android:id="@+id/image_View"
+                android:id="@+id/text_View1"
                 android:layout_width="match_parent"
                 android:layout_height="270dp"
                 android:background="#f2f2f2"/>
@@ -46,7 +46,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="280dp"
                 android:background="@null"
-                android:src="@drawable/arrow" />
+                android:src="@drawable/exchange" />
 
 
 
@@ -86,13 +86,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:src="@drawable/home1" />
+                    android:src="@drawable/home" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/hintTrangchu"
-                    android:textColorHint="#2196F3"/>
+                    android:textColorHint="#757575"/>
 
 
             </LinearLayout>
@@ -109,12 +109,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:src="@drawable/translate2" />
+                    android:src="@drawable/translate1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hintDich" />
+                    android:hint="@string/hintDich"
+                    android:textColorHint="#2196f3"/>
             </LinearLayout>
 
             <LinearLayout
@@ -126,6 +127,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
+                    android:id="@+id/button_setting1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
