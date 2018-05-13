@@ -16,7 +16,7 @@ import com.m.uet.apptranslate.R;
 public class SettingActivity extends AppCompatActivity {
 
     private ImageButton button_home2;
-    private ImageButton button_saved2;
+    private ImageButton button_translate2;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +33,8 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
-        button_saved2 = (ImageButton) findViewById(R.id.button_saved2);
-        button_saved2.setOnClickListener(new View.OnClickListener() {
+        button_translate2 = (ImageButton) findViewById(R.id.button_translate2);
+        button_translate2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SettingActivity.this,SavedActivity.class);
