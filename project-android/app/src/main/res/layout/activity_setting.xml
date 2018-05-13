@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="activities.SavedActivity"
+    tools:context="activities.SettingActivity"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -23,16 +23,45 @@
                 android:layout_marginTop="10dp"
                 android:hint="@string/hintCaidat"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColorHint="#000000"/>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="635dp"
+            android:layout_marginTop="46dp"
+            android:background="#f2f2f2"
+            android:orientation="vertical"
+            >
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="120dp"
+                android:id="@+id/button_about"
+                android:background="#fff"
+                android:hint="@string/hintGioithieu"
+                android:textSize="20dp"
+                android:textColorHint="#000000"/>
+            <Button
+                android:id="@+id/button_feedback"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="120dp"
+                android:background="#fff"
+                android:hint="@string/hintPhanhoi"
+                android:textSize="20dp"
+                android:textColorHint="#000000"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
+            android:layout_marginTop="677dp"
             android:background="#ffffff"
             android:orientation="horizontal">
 
@@ -55,7 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/hintTrangchu"
-                    android:textColorHint="#757575" />
+                    android:textColorHint="#757575"/>
 
 
             </LinearLayout>
@@ -78,7 +107,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="@string/hintDich" />
+                    android:hint="@string/hintDich"
+                    android:textColorHint="#757575"/>
             </LinearLayout>
 
             <LinearLayout
@@ -90,6 +120,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
+                    android:id="@+id/button_setting2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
@@ -99,7 +130,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="@string/hintCaidat"
-                    android:textColorHint="#2196f3" />
+                    android:textColorHint="#2196f3"/>
             </LinearLayout>
 
         </LinearLayout>

@@ -23,7 +23,8 @@
                 android:layout_marginTop="10dp"
                 android:hint="@string/hintDich"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColorHint="#000"/>
 
         </LinearLayout>
 

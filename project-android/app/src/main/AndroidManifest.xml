@@ -23,7 +23,9 @@
         <activity android:name="activities.HomeActivity" />
         <activity android:name="activities.SettingActivity" />
         <activity android:name="activities.SavedActivity" />
-        <activity android:name="activities.SupportActivity" />
+        <activity android:name="activities.SupportActivity"
+            android:theme="@style/AppTheme.CustomTheme"
+            />
     </application>
 
 </manifest>

@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="600dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context="activities.SupportActivity">
 
-
-
-</AbsoluteLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Translate design by UET Team"
+        android:layout_marginTop="200dp"
+        android:textSize="20dp"
+        android:textColor="#000"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:text="Version 1.0"
+        android:layout_marginLeft="85dp"
+        android:textSize="20dp"
+        android:textColor="#000"
+        />
+</RelativeLayout>
