@@ -8,7 +8,7 @@
         <item>Tiếng Pháp</item>
     </string-array>
     <string name="hintTrangchu">Trang chủ</string>
-    <string name="hintDaluu">Đã lưu</string>
+    <string name="hintDich">Dịch </string>
     <string name="hintCaidat">Cài đặt</string>
     <string name="hintGioithieu">GIỚI THIỆU</string>
     <string name="hintPhanhoi">PHẢN HỒI</string>

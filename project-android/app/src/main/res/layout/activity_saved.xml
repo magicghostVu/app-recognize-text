@@ -1,80 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroud1"
-    tools:context="activities.SavedActivity">
+    tools:context="activities.SavedActivity"
+    android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/button_setting1"
-        android:layout_width="65dp"
-        android:layout_height="55dp"
-        android:layout_x="345dp"
-        android:layout_y="599dp"
-        android:background="@null"
-        app:srcCompat="@drawable/settings" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageButton
-        android:id="@+id/button_saved"
-        android:layout_width="65dp"
-        android:layout_height="55dp"
-        android:layout_x="182dp"
-        android:layout_y="599dp"
-        android:background="@null"
-        app:srcCompat="@drawable/star1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#fff"
+            android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/button_home1"
-        android:layout_width="65dp"
-        android:layout_height="55dp"
-        android:layout_x="10dp"
-        android:layout_y="599dp"
-        android:background="@null"
-        app:srcCompat="@drawable/home" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/hintDich"
+                android:textColor="#"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <TextView
+        </LinearLayout>
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="11dp"
-        android:layout_y="633dp"
-        android:hint="@string/hintTrangchu"
-        android:textColorHint="#757575"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="575dp" />
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="326dp"
+            android:layout_marginTop="46dp">
 
-    <TextView
+            <TextView
+                android:id="@+id/image_View"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:background="#f2f2f2"/>
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="197dp"
-        android:layout_y="634dp"
-        android:hint="@string/hintDaluu"
-        android:textColorHint="#2196F3" />
-
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="356dp"
-        android:layout_y="635dp"
-        android:hint="@string/hintCaidat"
-        android:textColorHint="#757575" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="13dp"
-        android:layout_y="15dp"
-        android:hint="@string/hintDaluu"
-        android:textSize="23dp"
-        android:textColorHint="#000000"
-        android:textStyle="normal"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="24dp" />
+            <ImageButton
+                android:id="@+id/button_export"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="280dp"
+                android:background="@null"
+                android:src="@drawable/arrow" />
 
 
-</AbsoluteLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="375dp"
+            android:background="#f2f2f2">
+
+            <TextView
+                android:id="@+id/text_View2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="677dp"
+            android:background="#ffffff"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/button_home1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/home1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintTrangchu"
+                    android:textColorHint="#2196F3"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="92dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/translate2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintDich" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/settings" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hintCaidat" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

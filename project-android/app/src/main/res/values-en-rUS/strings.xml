@@ -9,7 +9,6 @@
     </string-array>
     <string name="app_name">Translate</string>
     <string name="hintTrangchu">Home</string>
-    <string name="hintDaluu">Saved</string>
     <string name="hintCaidat">Settings</string>
     <string name="hintGioithieu">About</string>
     <string name="hintPhanhoi">Feedback</string>
@@ -17,4 +16,5 @@
     <string name="hintXoa">CLEAR TRANSLATION HISTORY</string>
     <string name="hintNhapvanban">Enter text</string>
     <string name="hintVanban">Text</string>
+    <string name="hintDich">Translate</string>
 </resources>
