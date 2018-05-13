@@ -10,15 +10,18 @@ import java.util.Map;
 public enum LanguageSupported {
 
 
-    vie(0),
-    jpn(3),
-    chi_sim(2),
-    eng(1);
+    vie(0, "TIếng Việt"),
+    jpn(3, "Tiếng Nhật"),
+    chi_sim(2, "Tiếng Trung"),
+    eng(1, "Tiếng Anh");
 
     private int postion;
 
-    LanguageSupported(int postion) {
+    private String nameLanguage;
+
+    LanguageSupported(int postion, String nameLanguage) {
         this.postion = postion;
+        this.nameLanguage = nameLanguage;
     }
 
 
@@ -37,5 +40,9 @@ public enum LanguageSupported {
             initMap();
         }
         return mapCache.get(postion);
+    }
+
+    public String getNameLanguage() {
+        return nameLanguage;
     }
 }

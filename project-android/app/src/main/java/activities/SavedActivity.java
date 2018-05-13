@@ -1,6 +1,7 @@
 package activities;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,11 +11,15 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.m.uet.apptranslate.R;
 
 import constants.Constants;
 import language_support.LanguageSupported;
+import mytask.TaskTranslate;
+import translate_api.LanguageForTransApi;
 
 
 public class SavedActivity extends AppCompatActivity {
@@ -23,6 +28,39 @@ public class SavedActivity extends AppCompatActivity {
     Spinner spinner1;
 
     String tag = "trans_act";
+
+    LanguageForTransApi languageFromHome;
+
+    LanguageForTransApi targetLanguage;
+
+    public ImageButton getButton_home1() {
+        return button_home1;
+    }
+
+    public LanguageForTransApi getLanguageFromHome() {
+        return languageFromHome;
+    }
+
+    public LanguageForTransApi getTargetLanguage() {
+        return targetLanguage;
+    }
+
+    public void translate(View v) {
+
+        TextView t = findViewById(R.id.text_View1);
+        CharSequence c = t.getText();
+
+        if (c.toString().equals("")) {
+            Toast.makeText(this, "Nothings to translate", Toast.LENGTH_SHORT).show();
+        }
+        // thực hiện dịch ở đây
+        else {
+            TaskTranslate taskTranslate = new TaskTranslate(this);
+            taskTranslate.execute(c.toString());
+        }
+
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +76,16 @@ public class SavedActivity extends AppCompatActivity {
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 
+        SavedActivity thisAct = this;
+
         spinner1.setAdapter(arrayAdapter);
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                LanguageSupported selected = LanguageSupported.fromPosition(position);
 
+                LanguageForTransApi targetLanguage = LanguageForTransApi.valueOf(selected.name());
+                thisAct.targetLanguage = targetLanguage;
 
             }
 
@@ -73,8 +116,14 @@ public class SavedActivity extends AppCompatActivity {
 
         LanguageSupported languageSupported = LanguageSupported.valueOf(beforeIntent.getStringExtra(Constants.getKeyLanExtras()));
 
+        languageFromHome = LanguageForTransApi.valueOf(languageSupported.name());
+
         Log.d(tag, "text is " + textNeedTrans + " " + "lan is " + languageSupported);
 
 
+        TextView textViewData = findViewById(R.id.text_View1);
+        textViewData.setText(textNeedTrans);
+        TextView textViewLanguage = findViewById(R.id.textView_lan);
+        textViewLanguage.setText(languageSupported.getNameLanguage());
     }
 }

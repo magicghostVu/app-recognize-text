@@ -39,15 +39,17 @@
                 android:background="#f2f2f2"/>
 
             <ImageButton
-                android:id="@+id/button_export"
+                android:id="@+id/button_trans"
                 android:layout_width="60dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="280dp"
                 android:background="@null"
-                android:src="@drawable/exchange" />
+                android:src="@drawable/exchange"
+                android:onClick="translate" />
 
             <TextView
+                android:id="@+id/textView_lan"
                 android:layout_width="130dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="280dp"
