@@ -13,7 +13,12 @@ public class Constants {
 
     private static Set<String> extAllow;
 
-    public static void intitConstant() {
+    private static String apiKey = "AIzaSyAgr35d8MYVcrvQPgwIP14Tzflf3HvdEe0";
+
+    private static String urlTransApi= "https://translation.googleapis.com/language/translate/v2";
+
+
+    public static void initConstant() {
         extAllow = new HashSet<>();
         extAllow.add("jpg");
         extAllow.add("png");
@@ -21,5 +26,13 @@ public class Constants {
 
     public static Set<String> getExtAllow() {
         return extAllow;
+    }
+
+    public static String getApiKey() {
+        return apiKey;
+    }
+
+    public static String getUrlTransApi() {
+        return urlTransApi;
     }
 }

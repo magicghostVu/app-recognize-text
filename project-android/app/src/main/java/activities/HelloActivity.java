@@ -4,13 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.widget.Toast;
 
 import com.m.uet.apptranslate.R;
 
 import java.io.IOException;
 
+import translate_api.LanguageForTransApi;
+import translate_api.TranslateUtils;
 import utils.Utils;
 
 
@@ -25,6 +29,30 @@ public class HelloActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hello);
+
+
+        /*Display display = getWindowManager().getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics ();
+        display.getMetrics(outMetrics);
+
+        float density  = getResources().getDisplayMetrics().density;
+        float dpHeight = outMetrics.heightPixels / density;
+        float dpWidth  = outMetrics.widthPixels / density;
+
+
+        Log.d(tag, "dpWidth is "+ dpWidth+ " height is "+ dpHeight+ "density is "+ density);*/
+
+        Runnable r = () -> {
+            String text = "This is a text";
+
+            String translatedText = TranslateUtils.getTextTranslated(text, LanguageForTransApi.eng, LanguageForTransApi.vie);
+
+            Log.d(tag, "trans text is " + translatedText);
+        };
+
+
+        new Thread(r).start();
+
 
         /*mWaitHandler.postDelayed(new Runnable() {
 
