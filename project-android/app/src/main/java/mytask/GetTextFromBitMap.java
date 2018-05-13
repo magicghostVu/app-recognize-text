@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import language_support.LanguageSupported;
 import orc.man.OrcManager;
 
 import com.m.uet.apptranslate.R;
@@ -20,10 +21,12 @@ public class GetTextFromBitMap extends AsyncTask<Bitmap, Void, String> {
 
     private String tag = "myTask";
 
+    private LanguageSupported languageSupported;
 
-    public GetTextFromBitMap(Activity parentContext) {
+
+    public GetTextFromBitMap(Activity parentContext, LanguageSupported languageSupported) {
         this.parentContext = parentContext;
-        //this.data = dataWillProcess;
+        this.languageSupported = languageSupported;
     }
 
     private Activity parentContext;
@@ -48,8 +51,6 @@ public class GetTextFromBitMap extends AsyncTask<Bitmap, Void, String> {
         // todo: làm cho nút chọn ảnh không bấm được nữa
 
 
-
-
     }
 
     @Override
@@ -72,7 +73,7 @@ public class GetTextFromBitMap extends AsyncTask<Bitmap, Void, String> {
     @Override
     protected String doInBackground(Bitmap[] bitmaps) {
         Bitmap data = bitmaps[0];
-        return OrcManager.getInstance().getDataFromBitMap(data);
+        return OrcManager.getInstance().getDataFromBitMap(data, languageSupported);
         //return null;
     }
 }

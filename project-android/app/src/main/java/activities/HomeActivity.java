@@ -28,6 +28,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import constants.Constants;
+import language_support.LanguageSupported;
 import mytask.GetTextFromBitMap;
 import orc.man.OrcManager;
 import utils.FileUtils;
@@ -43,6 +44,9 @@ public class HomeActivity extends AppCompatActivity {
 
     Spinner spinner;
 
+    LanguageSupported currentLanguageSupported;
+
+
     private final int requestCodeChooseFile = 6384;
 
 
@@ -53,11 +57,26 @@ public class HomeActivity extends AppCompatActivity {
 
     private final int requestCodeReadPermission = 2;
 
+
+    public void recognizeTextFromBitMap(View v) {
+
+        // user chưa chọn ảnh
+        if (currentBitMap == null) {
+            Toast.makeText(this, "You have not selected ỉmg, select img first", Toast.LENGTH_SHORT).show();
+        } else {
+            GetTextFromBitMap taskGetText = new GetTextFromBitMap(this, currentLanguageSupported);
+            taskGetText.execute(currentBitMap);
+        }
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
 
         super.onCreate(savedInstanceState);
+
+        currentLanguageSupported = LanguageSupported.vie;
         setContentView(R.layout.activity_home);
 
         text_View = findViewById(R.id.text_View);
@@ -69,10 +88,29 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         button_translate = findViewById(R.id.button_translate);
-        button_translate.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, SavedActivity.class);
-            startActivity(intent);
 
+
+        button_translate.setOnClickListener(v -> {
+
+            // todo: check điều kiện để bấm nút này
+
+
+            String currentText = text_View.getText().toString();
+            if (currentText == null || currentText.equals("")) {
+                Toast.makeText(this, "You have no text to translate", Toast.LENGTH_SHORT).show();
+            } else {
+                Intent intent = new Intent(HomeActivity.this, SavedActivity.class);
+
+                // truyền data text và ngôn ngữ ở đây
+                //intent.put
+
+                intent.putExtra(Constants.getKeyExtrasText(), currentText);
+
+                intent.putExtra(Constants.getKeyLanExtras(), currentLanguageSupported.name());
+
+
+                startActivity(intent);
+            }
         });
 
         button_image = findViewById(R.id.button_image);
