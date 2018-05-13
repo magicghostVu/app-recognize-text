@@ -2,11 +2,8 @@ package activities;
 
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -29,23 +26,17 @@ public class SavedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_saved);
 
 
-        button_home1 = (ImageButton) findViewById(R.id.button_home1);
-        button_home1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SavedActivity.this, HomeActivity.class);
-                startActivity(intent);
+        button_home1 = findViewById(R.id.button_home1);
+        button_home1.setOnClickListener(v -> {
+            Intent intent = new Intent(SavedActivity.this, HomeActivity.class);
+            startActivity(intent);
 
-            }
         });
-        button_setting1 = (ImageButton) findViewById(R.id.button_setting1);
-        button_setting1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SavedActivity.this, SettingActivity.class);
-                startActivity(intent);
+        button_setting1 = findViewById(R.id.button_setting1);
+        button_setting1.setOnClickListener(v -> {
+            Intent intent = new Intent(SavedActivity.this, SettingActivity.class);
+            startActivity(intent);
 
-            }
         });
 
 
