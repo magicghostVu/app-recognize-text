@@ -8,4 +8,14 @@
     </string-array>
     <string name="app_name">Translate</string>
     <string name="hintCaidat">设置</string>
+    <string name="hintLanguage">选择语言</string>
+    <string name="hintXuat">提取</string>
+    <string name="hintAnh">图片</string>
+    <string name="hintPhanhoi">反馈</string>
+    <string name="hintGioithieu">介绍</string>
+    <string name="hintDich">翻译</string>
+    <string name="hintTrangchu">主页</string>
+    <string name="hintfb1">Thank you for using the application developed by us. \nFor any comments, please contact:</string>
+    <string name="hintfb2">Mr. Vu Hong Phu \nMr. Ho Duc Thanh \nMr. Nguyen Tuan Vuong</string>
+    <string name="hintNhapvanban">输入文字</string>
 </resources>

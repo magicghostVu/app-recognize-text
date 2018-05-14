@@ -12,4 +12,10 @@
     <string name="hintDich">翻訳</string>
     <string name="hintGioithieu">約</string>
     <string name="hintPhanhoi">フィードバック</string>
+    <string name="hintAnh">画像</string>
+    <string name="hintXuat">エキス</string>
+    <string name="hintLanguage">言語を選択</string>
+    <string name="hintfb1">Thank you for using the application developed by us. \nFor any comments, please contact:</string>
+    <string name="hintfb2">Mr. Vu Hong Phu \nMr. Ho Duc Thanh \nMr. Nguyen Tuan Vuong</string>
+    <string name="hintNhapvanban">テキストを入力</string>
 </resources>

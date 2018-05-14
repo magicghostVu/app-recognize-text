@@ -12,10 +12,7 @@
     <string name="hintCaidat">Cài đặt</string>
     <string name="hintGioithieu">GIỚI THIỆU</string>
     <string name="hintPhanhoi">PHẢN HỒI</string>
-    <string name="hintTrogiup">TRỢ GIÚP</string>
-    <string name="hintXoa">XÓA LỊCH SỬ DỊCH</string>
-    <string name="hintNhapvanban">Nhập văn bản</string>
-    <string name="hintVanban">Văn bản</string>
+    <string name="hintNhapvanban">\n Nhập văn bản</string>
     <string name="hintLanguage">Chọn ngôn ngữ</string>
     <string name="hintTrangchu">Trang chủ</string>
     <string name="hintfb1">Cảm ơn bạn đã sử dụng ứng dụng \ncủa chúng tôi. \nMọi ý kiến đóng góp xin liên hệ:</string>

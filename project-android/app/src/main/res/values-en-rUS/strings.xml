@@ -11,10 +11,7 @@
     <string name="hintCaidat">Settings</string>
     <string name="hintGioithieu">About</string>
     <string name="hintPhanhoi">Feedback</string>
-    <string name="hintTrogiup">Help</string>
-    <string name="hintXoa">CLEAR TRANSLATION HISTORY</string>
     <string name="hintNhapvanban">Enter text</string>
-    <string name="hintVanban">Text</string>
     <string name="hintDich">Translate</string>
     <string name="hintAnh">Image</string>
     <string name="hintXuat">Extract Text</string>
