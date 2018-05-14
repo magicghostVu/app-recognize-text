@@ -15,17 +15,26 @@ public class SettingActivity extends AppCompatActivity {
 
     private ImageButton button_home2;
     private ImageButton button_translate2;
-    private Button button;
+    private Button button1;
+    private Button button2;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        button = findViewById(R.id.button_about);
-        button.setOnClickListener(new View.OnClickListener() {
+        button1 = findViewById(R.id.button_about);
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingActivity.this,SupportActivity.class));
+            }
+        });
+
+        button2 = findViewById(R.id.button_feedback);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingActivity.this,FeedbackActivity.class));
             }
         });
 

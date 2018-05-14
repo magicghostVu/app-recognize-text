@@ -18,4 +18,6 @@
     <string name="hintVanban">Văn bản</string>
     <string name="hintLanguage">Chọn ngôn ngữ</string>
     <string name="hintTrangchu">Trang chủ</string>
+    <string name="hintfb1">Cảm ơn bạn đã sử dụng ứng dụng \ncủa chúng tôi. \nMọi ý kiến đóng góp xin liên hệ:</string>
+    <string name="hintfb2">Mr. Vu Hong Phu \nMr. Ho Duc Thanh \nMr. Nguyen Tuan Vuong</string>
 </resources>

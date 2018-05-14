@@ -26,6 +26,8 @@
         <activity android:name="activities.SupportActivity"
             android:theme="@style/AppTheme.CustomTheme"
             />
+        <activity android:name="activities.FeedbackActivity"
+            android:theme="@style/AppTheme.CustomTheme"/>
     </application>
 
 </manifest>
