@@ -16,4 +16,6 @@
     <string name="hintNhapvanban">Enter text</string>
     <string name="hintVanban">Text</string>
     <string name="hintDich">Translate</string>
+    <string name="hintAnh">Image</string>
+    <string name="hintXuat">Extract Text</string>
 </resources>
