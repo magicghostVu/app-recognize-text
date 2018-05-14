@@ -18,4 +18,5 @@
     <string name="hintDich">Translate</string>
     <string name="hintAnh">Image</string>
     <string name="hintXuat">Extract Text</string>
+    <string name="hintLanguage">Choose Language</string>
 </resources>

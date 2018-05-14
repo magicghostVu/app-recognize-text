@@ -8,7 +8,6 @@
     </string-array>
     <string name="hintAnh">Chọn ảnh</string>
     <string name="hintXuat">Xuất văn bản</string>
-    <string name="hintTrangchu">Trang chủ</string>
     <string name="hintDich">Dịch </string>
     <string name="hintCaidat">Cài đặt</string>
     <string name="hintGioithieu">GIỚI THIỆU</string>
@@ -18,4 +17,5 @@
     <string name="hintNhapvanban">Nhập văn bản</string>
     <string name="hintVanban">Văn bản</string>
     <string name="hintLanguage">Chọn ngôn ngữ</string>
+    <string name="hintTrangchu">Trang chủ</string>
 </resources>

@@ -22,18 +22,15 @@ public class SettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
 
         button = findViewById(R.id.button_about);
-        button.setOnClickListener(v ->  {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingActivity.this,SupportActivity.class));
             }
         });
 
-
-
-
         button_home2 = findViewById(R.id.button_home2);
-        button_home2.setOnClickListener(v ->  {
+        button_home2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SettingActivity.this,HomeActivity.class);
@@ -42,7 +39,7 @@ public class SettingActivity extends AppCompatActivity {
         });
 
         button_translate2 = findViewById(R.id.button_translate2);
-        button_translate2.setOnClickListener(v ->  {
+        button_translate2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SettingActivity.this,SavedActivity.class);
